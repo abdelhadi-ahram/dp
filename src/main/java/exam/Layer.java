@@ -32,4 +32,12 @@ public class Layer extends AbstractLayer {
         return  outputs;
     }
 
+    @Override
+    void setInput(List<Double> inputs) {
+        for(int i = 0; i < inputs.size(); i++) {
+            for (Neuron neuron : neurons) {
+                neuron.setOutput(inputs.get(i));
+            }
+        }
+    }
 }
